@@ -12,6 +12,7 @@ padding: 0.5rem;
 border: 2px solid #EF5350;
 font: inherit;
 background: #FFFFFF;
+width: 100%;
 `
 
 const Button = styled.button`
