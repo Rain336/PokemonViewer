@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import styled from '@emotion/styled/macro';
 import debounce from 'lodash.debounce';
 import { PokemonListItem } from './pokemon-list-item';
-import { usePokeApi, usePokeApiPaginated } from '../api';
+import { usePokeApiPaginated } from '../api';
+import { LoadingSpinner } from './loading-spinner';
 
 const Grid = styled.div`
 display: grid;
@@ -27,7 +28,7 @@ export function PokemonList() {
 
     switch (result.type) {
         case 'pending':
-            return <div>Loading...</div>
+            return <LoadingSpinner />
 
         case 'error':
             return <div>{`Error: ${result.reason}`}</div>

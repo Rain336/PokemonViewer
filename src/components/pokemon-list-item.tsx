@@ -3,6 +3,7 @@ import styled from '@emotion/styled/macro';
 import { NamedApiResource } from 'pokeapi-js-wrapper';
 import { usePokeApi } from '../api';
 import { extractId } from '../utils';
+import { LoadingSpinner } from './loading-spinner';
 
 interface Props {
     pokemon: NamedApiResource
@@ -44,7 +45,7 @@ export function PokemonListItem({ pokemon }: React.PropsWithChildren<Props>) {
 
     switch (result.type) {
         case 'pending':
-            return <div>Loading...</div>
+            return <LoadingSpinner />
 
         case 'error':
             return <div>{`Error: ${result.reason}`}</div>
